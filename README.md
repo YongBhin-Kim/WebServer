@@ -1,4 +1,4 @@
-<h2>Spring Boot Docker Image 구축 </h2>
+<h2>Spring Boot Docker Image</h2>
 
 **[Docker image Environment]**
 - Docker image
@@ -12,8 +12,9 @@
 
 
 <h3>Docker Image 다운 및 실행 방법</h3> <br>
-**[Spring Boot Docker image 실행하기]**
-1. Docker image 다운 
+
+**[Spring Boot Docker image 실행하기]** <br>
+1. Docker image 다운 <br>
 - Docker image 링크 - https://hub.docker.com/r/coji68/web-server/tags <br>
 - 터미널에 명령어 `docker pull coji68/web-server:1.0` 을 입력한다.(Ver1.0) <br>
 <img width="800" height="30" alt="image" src="https://user-images.githubusercontent.com/98372474/166339548-7a06b54f-304e-4016-8d87-5a3c66c9c7f9.png"> <br>
@@ -36,12 +37,14 @@
 
 
 <h3> Ver 1.0 : 간단한 스프링 부트 이미지</h3>
+
 - Docker Image : `docker pull coji68/web-server:1.0`<br>
 <h3> Ver 1.1 : 스프링 부트 도커 이미지를 이용한 통신(업로드 예정)</h3>
 - Docker Image : `docker pull coji68/web-server:1.1`<br>
+<br><br>
 
-
-**[Spring Boot Docker image 만들기]**
+------------------------------------------------------------------------------------------------------------------------------
+**[Spring Boot Docker image 만들기]**<br>
 
 (만드는 방법도 추가해보았습니다.)<br>
 ```
@@ -110,10 +113,6 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 ==============================<br>
 ==============================<br>
 ==============================<br>
-
-<h2>Ver.1.1 : Spring Boot Docker Image : 통신</h2>
-
-<h2>Ver 2.0 : Spring Boot Docker Image : 게시판</h2>
 
 **[Environment]**
 - Mac OS
