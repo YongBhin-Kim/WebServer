@@ -59,7 +59,7 @@
 
 
 ------------------------------------------------------------------------------------------------------------------------------
-<h3>[Spring Boot Docker image 만들기]</h3> <br>
+<h3>[Spring Boot Docker image 생성, Docker Hub에 올리기]</h3> <br>
 
 - 먼저 Docker Desktop을 실행합니다.
 
@@ -92,14 +92,23 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 `docker build --build-arg JAR_FILE=[jar파일 경로] -t [도커레포지토리:태그] [Dockerfile위치](.은 현재디렉토리)` <br>
 <img width="900" height="20" alt="image" src="https://user-images.githubusercontent.com/98372474/166337129-e494bf25-8913-41b9-933a-c4f5ee2e5e62.png"> <br>
 
-<img width="1370" alt="image" src="https://user-images.githubusercontent.com/98372474/167170931-856ab12d-58d1-425f-a47b-6c4aff755353.png">
-
-
 - `docker images` 명령으로 생성된 이미지 확인 <br>
 
 <img width="1002" alt="image" src="https://user-images.githubusercontent.com/98372474/167173172-f1ea37b2-c369-4b10-830e-11496fd6a9e7.png"> <br>
 
 
-
 - docker image 삭제 명령어 : `docker image rm [Image ID]` <br>
+
+- [만든 이미지 Docker Hub에 올리기]
+
+- 우선 터미널에서 `Docker login` 명령으로 도커에 로그인 한다. 
+
+<img width="1340" alt="image" src="https://user-images.githubusercontent.com/98372474/167173758-25a5d22a-daf9-42ea-afb6-24315b58e198.png">
+
+- docker push [레포지토리]:[태그] 명령으로 도커 레포지토리에 push 한다.
+
+<img width="898" alt="image" src="https://user-images.githubusercontent.com/98372474/167174523-79ac92e5-4fb5-46d9-a4f8-9e79db14b5be.png">
+
+- 도커 레포지토리에 올라갔다.
+<img width="1270" alt="image" src="https://user-images.githubusercontent.com/98372474/167174484-82a427f9-e9d2-49a5-8301-3600616d8e46.png">
 
