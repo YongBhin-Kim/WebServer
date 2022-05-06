@@ -4,8 +4,6 @@
 - Docker image
 - Language : Java
 - Framework : Spring Boot(Gradle)
-- View template : Thymeleaf (추가예정)
-- Access DB : JPA (추가예정)
 <br><br>
 
 **[제공하는 것]**
