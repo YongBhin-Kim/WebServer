@@ -1,4 +1,4 @@
-<h2>(학부연구생)Spring Boot Docker Image</h2>
+<h2>(학부연구생) Spring Boot Docker Image를 이용한 Client-Server 통신</h2>
 
 **[Docker image Environment]**
 - Docker image
@@ -6,20 +6,21 @@
 - Framework : Spring Boot(Gradle)
 - View template : Thymeleaf (추가예정)
 - Access DB : JPA (추가예정)
-<br><br><br>
-
-<h3> Ver 1.0 : 간단한 스프링 부트 이미지</h3>
-
-- Docker Image : `docker pull coji68/web-server:1.0`<br>
-
-<h3> Ver 1.1 : 스프링 부트 도커 이미지를 이용한 통신(현재 git에 올라온 code)</h3>
-
-- Docker Image(Server) : `docker pull coji68/web-server:1.1`<br>
-- Client : `git clone https://github.com/YongBhin-Kim/WebServer.git` <br>
 <br><br>
 
+**[제공하는 것]**
+- 1. Docker Image 다운 & 실행 방법 
+- 2. Client-Server 통신
+- 3. Docker Image 생성
+- ver1.0 : 간단한 스프링 부트 이미지
+- - Docker Image : `docker pull coji68/web-server:1.0`
+- ver1.1 : 스프링 부트 도커 이미지를 이용한 통신(현재 git에 올라온 code)
+- - Docker Image(Server) : `docker pull coji68/web-server:1.1`
+- - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git` <br>
+<br><br><br>
 
-<h3>1. Docker Image 다운 및 실행 방법</h3> <br>
+
+<h3>[1. Docker Image 다운 및 실행 방법]</h3> <br>
 
 **[Spring Boot Docker image (Server) 실행하기]** <br>
 1. Docker image 다운 <br>
@@ -34,18 +35,14 @@
 - Docker Image 실행 명령어 <br>
  `docker run -p [브라우저포트번호][컨테이너포트번호] -t [레포지이름/이미지이름:태그]` <br><br>
 
-
 - 명령어 실행 결과 Spring이 정상 작동<br>
 <img width="700" height="300" alt="image" src="https://user-images.githubusercontent.com/98372474/167175447-7dee3ec2-b738-4fb4-ac6a-f9a1dac39390.png"> <br>
-<img width="700" height="300" alt="image" src="https://user-images.githubusercontent.com/98372474/167176771-082a6678-82c9-478f-95d4-be93696f36e3.png"> <br>
-
-
 
 - 브라우저를 통해 localhost로 접속한 결과 <br>
 <img width="500" height="250" alt="image" src="https://user-images.githubusercontent.com/98372474/166337952-26e86920-adf7-4ed7-9ce5-8c0130c6d516.png"><br><br>
 
 
-<h3>2. Server-Client 통신</h3> <br>
+<h3>[2. Server-Client 통신] </h3><br>
 
 **[통신을 위한 Client]** <br>
 - git clone한 Client.java 파일을 컴파일한다. 
@@ -62,10 +59,8 @@
   
 
 
-
-
 ------------------------------------------------------------------------------------------------------------------------------
-<h3>[Spring Boot Docker image 생성, Docker Hub에 올리기]</h3> <br>
+<h3>[3. Spring Boot Docker image 생성, Docker Hub에 올리기]</h3> <br>
 
 - 먼저 Docker Desktop을 실행합니다.
 
