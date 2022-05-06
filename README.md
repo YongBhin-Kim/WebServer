@@ -12,7 +12,7 @@
 
 - Docker Image : `docker pull coji68/web-server:1.0`<br>
 
-<h3> Ver 1.1 : 스프링 부트 도커 이미지를 이용한 통신(현재 git에 올라와있는게 Ver 1.1이며 Docker Image는 따로 올리겠습니다.)</h3>
+<h3> Ver 1.1 : 스프링 부트 도커 이미지를 이용한 통신(현재 git에 올라온 code)</h3>
 
 - Docker Image(Server) : `docker pull coji68/web-server:1.1`<br>
 - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git` <br>
