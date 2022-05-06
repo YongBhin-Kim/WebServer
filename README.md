@@ -12,19 +12,19 @@
 
 - Docker Image : `docker pull coji68/web-server:1.0`<br>
 
-<h3> Ver 1.1 : 스프링 부트 도커 이미지를 이용한 통신</h3>
+<h3> Ver 1.1 : 스프링 부트 도커 이미지를 이용한 통신(현재 git에 올라와있는게 Ver 1.1이며 Docker Image는 따로 올리겠습니다.)</h3>
 
 - Docker Image(Server) : `docker pull coji68/web-server:1.1`<br>
 - Client : git clone
 <br><br>
 
 
-<h3>Docker Image 다운 및 실행 방법</h3> <br>
+<h3>1. Docker Image 다운 및 실행 방법</h3> <br>
 
-**[Spring Boot Docker image 실행하기]** <br>
+**[Spring Boot Docker image (Server) 실행하기]** <br>
 1. Docker image 다운 <br>
 - Docker image 링크 - https://hub.docker.com/r/coji68/web-server/tags <br>
-- 터미널에 명령어 `docker pull coji68/web-server:1.0` 을 입력한다.(Ver1.0) <br>
+- 터미널에 명령어 `docker pull coji68/web-server:ver1.x` 을 입력한다. <br>
 <img width="800" height="30" alt="image" src="https://user-images.githubusercontent.com/98372474/166339548-7a06b54f-304e-4016-8d87-5a3c66c9c7f9.png"> <br>
 2. 다운받은 image 확인 명령어 : `docker images` <br>
 <img width="800" height="40" alt="image" src="https://user-images.githubusercontent.com/98372474/166339612-af0c191b-e070-455e-a3a2-55cbe5c2ce85.png"> <br>
@@ -42,6 +42,19 @@
 
 - 브라우저를 통해 localhost로 접속한 결과 <br>
 <img width="500" height="250" alt="image" src="https://user-images.githubusercontent.com/98372474/166337952-26e86920-adf7-4ed7-9ce5-8c0130c6d516.png"><br><br>
+
+
+<h3>2. Server-Client 통신</h3> <br>
+
+**[통신을 위한 Client]** <br>
+- git clone한 Client.java 파일을 컴파일한다. `java Client.java`
+- 다음과 같이 Server-Client가 통신이 가능하다.(왼쪽 : Server / 오른쪽 : Client) <br>
+
+<img width="1195" alt="image" src="https://user-images.githubusercontent.com/98372474/167101333-abd111f8-22a2-42a5-819e-2a552157c4f9.png"> <br><br>
+<br><br><br>
+  
+
+
 
 
 ------------------------------------------------------------------------------------------------------------------------------
