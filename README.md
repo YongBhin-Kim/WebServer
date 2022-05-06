@@ -48,9 +48,10 @@
 
 **[통신을 위한 Client]** <br>
 - git clone한 Client.java 파일을 컴파일한다. `java Client.java`
-- 다음과 같이 Server-Client가 통신이 가능하다.(왼쪽 : Server / 오른쪽 : Client) <br>
+- 다음과 같이 Server-Client가 통신이 가능하다.(왼쪽 : Client / 오른쪽 : Server) <br>
 
-<img width="1195" alt="image" src="https://user-images.githubusercontent.com/98372474/167101333-abd111f8-22a2-42a5-819e-2a552157c4f9.png"> <br><br>
+<img width="1340" alt="image" src="https://user-images.githubusercontent.com/98372474/167169077-e27e5564-705c-49d2-9243-fc14b9234eee.png"> <br><br>
+
 <br><br><br>
   
 
