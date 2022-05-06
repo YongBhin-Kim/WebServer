@@ -61,6 +61,8 @@
 ------------------------------------------------------------------------------------------------------------------------------
 <h3>[Spring Boot Docker image 만들기]</h3> <br>
 
+- 먼저 Docker Desktop을 실행합니다.
+
 - Spring Boot 코드 clone, SNAPSHOT 제대로 동작 하는지 체크
 ```
 git clone https://github.com/spring-guides/gs-spring-boot-docker.git // spring image clone
@@ -83,73 +85,21 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 ```
 <br>
 
-- Spring boot Docker Image 생성 명령어<br>
-`docker build --build-arg JAR_FILE=[jar파일 경로] -t [이미지이름] [Dockerfile위치](.은 현재디렉토리)` <br>
+- [Spring boot Docker Image 생성]<br>
+
+- Spring Boot Docker Image 생성 명령어는 다음과 같습니다.
+
+`docker build --build-arg JAR_FILE=[jar파일 경로] -t [도커레포지토리:태그] [Dockerfile위치](.은 현재디렉토리)` <br>
 <img width="900" height="20" alt="image" src="https://user-images.githubusercontent.com/98372474/166337129-e494bf25-8913-41b9-933a-c4f5ee2e5e62.png"> <br>
 
-- 만일 다음과 같은 생성 오류가 뜬다면 docker 데몬이 정상 작동하지 않기 때문이다.
-- - 다음 명령어로 이를 해결한 후 Docker Image를 생성한다.
 <img width="1370" alt="image" src="https://user-images.githubusercontent.com/98372474/167170931-856ab12d-58d1-425f-a47b-6c4aff755353.png">
 
 
 - `docker images` 명령으로 생성된 이미지 확인 <br>
-<img width="900" height="40" alt="image" src="https://user-images.githubusercontent.com/98372474/166337688-b2a4e403-d952-4773-842b-ec4349bf4cfa.png"> <br>
+
+<img width="1002" alt="image" src="https://user-images.githubusercontent.com/98372474/167173172-f1ea37b2-c369-4b10-830e-11496fd6a9e7.png"> <br>
+
 
 
 - docker image 삭제 명령어 : `docker image rm [Image ID]` <br>
-
-**==========Spring Boot Docker Image 다운 및 실행 방법(22-05-03, ver1.0) =========**<br><br>
-
-
-
-**[Docker image 다운로드]**
-- 다운로드 링크 - https://hub.docker.com/r/coji68/web-server/tags <br>
-- 터미널에서 `docker pull coji68/web-server:1.0` 명령으로 이미지를 다운받는다.
-
-<img width="400" height="280" alt="image" src="https://user-images.githubusercontent.com/98372474/166118656-8ac0503b-f735-48a2-80ec-6020a725a1f1.png"><br>
-- Docker Desktop에 다음과 같이 coji68/web-server 이미지가 다운로드 되었다.
-<br><br>
-
-
-**[Docker 컨테이너 만들기]**
-
-- 생성 전(빈 컨테이너) <br>
-<img width="400" height="280" alt="image" src="https://user-images.githubusercontent.com/98372474/166118867-1253ac8e-2c99-4c55-b0a9-763ed326fe9b.png">
-<br>
-
-- (생성과 동시에 실행) : 터미널에 `docker docker run -i -t --name [컨테이너이름] -p [포트번호]:[컨테이너포트번호] [이미지이름]` 입력 <br>
-- (생성만) : 터미널에 `docker create -p [포트번호]:[포트번호] --[컨테이너이름] [이미지이름]` 입력하여 컨테이너 생성 <br>
-
-<img width="500" height="50" alt="image" src="https://user-images.githubusercontent.com/98372474/166119980-98c71541-46ac-497a-9115-5889c3d4c191.png">
-<br>
-<img width="500" height="100" alt="image" src="https://user-images.githubusercontent.com/98372474/166119342-b66c7427-fff8-4587-af01-aa7e04c5e9a3.png">
-<br>
-
-- 생성 후(컨테이너 yb 생성) <br>
-<img width="400" height="280" alt="image" src="https://user-images.githubusercontent.com/98372474/166119950-53a63921-a0f5-4485-8c95-c3e4aae2bebf.png"><br><br>
-
-
-**URL : `http://localhost:[포트번호]/board/write` 에서 글 작성과 파일 첨부가 가능하며** <br>
-**확인은 및 삭제는 URL: `http://localhost:[포트번호]/board/list` 에서 가능합니다.**  <br>
-
-<br><br>
-
-==============================<br>
-==============================<br>
-==============================<br>
-
-**[Environment]**
-- Mac OS
-
-
-**[Use]**
-- Visual Studio Code 2
-- Language : Java
-- Framework : Spring Boot(Gradle)
-- Database : MariaDB (Ver 15.1)
-- View template : Thymeleaf
-- MySQLWorkbench
-- Access DB : JPA
-- Docker image
-<br><br><br>
 
