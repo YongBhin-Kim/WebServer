@@ -33,7 +33,7 @@
 3. 다운받은 image를 컨테이너 생성과 동시에 실행 <br>
 - Docker Image 실행 명령어 <br>
  `docker run -p [브라우저포트번호][컨테이너포트번호] -t [레포지이름/이미지이름:태그]` <br><br>
- `docker run -p 8080:8080 coji68/web-server:1.x` <br>
+
 
 - 명령어 실행 결과 Spring이 정상 작동<br>
 <img width="700" height="300" alt="image" src="https://user-images.githubusercontent.com/98372474/167175447-7dee3ec2-b738-4fb4-ac6a-f9a1dac39390.png"> <br>
@@ -48,9 +48,15 @@
 <h3>2. Server-Client 통신</h3> <br>
 
 **[통신을 위한 Client]** <br>
-- git clone한 Client.java 파일을 컴파일한다. `java Client.java`
-- 다음과 같이 Server-Client가 통신이 가능하다.(왼쪽 : Client / 오른쪽 : Server) <br>
-<img width="1340" alt="image" src="https://user-images.githubusercontent.com/98372474/167169077-e27e5564-705c-49d2-9243-fc14b9234eee.png"> <br><br>
+- git clone한 Client.java 파일을 컴파일한다. 
+- 터미널에 명령어 입력 `java Client.java`<br>
+
+**[통신을 위한 Server]** <br>
+- 다운받은 도커 이미지를 브라우저/컨테이너 포트번호를 10000으로 열어준다.
+- 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.x` <br>
+
+**다음과 같이 Server-Client가 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
+<img width="1429" alt="image" src="https://user-images.githubusercontent.com/98372474/167178601-d1e7a872-c7f9-4681-8b37-e68ef0f0b977.png"><br><br>
 
 <br><br><br>
   
