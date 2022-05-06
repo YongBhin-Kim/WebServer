@@ -4,7 +4,7 @@ class Client {
 
   public static void main(String argv[]) throws Exception { 
 
-    Socket clientSocketForSpring = new Socket("localhost", 8080);
+    // Socket clientSocketForSpring = new Socket("localhost", 8080); // Docker Image 다운 시에는 필요 없음.
     String clientSentence, receivedSentence; 
 
     Socket clientSocket = new Socket("localhost", 10000);
@@ -27,7 +27,7 @@ class Client {
     System.out.println("From Server: " + receivedSentence);
     // }
     clientSocket.close(); 
-    clientSocketForSpring.close();
+    // clientSocketForSpring.close();
   } 
 } 
 
