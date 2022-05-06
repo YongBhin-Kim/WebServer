@@ -8,7 +8,15 @@
 - Access DB : JPA (추가예정)
 <br><br><br>
 
+<h3> Ver 1.0 : 간단한 스프링 부트 이미지</h3>
 
+- Docker Image : `docker pull coji68/web-server:1.0`<br>
+
+<h3> Ver 1.1 : 스프링 부트 도커 이미지를 이용한 통신</h3>
+
+- Docker Image(Server) : `docker pull coji68/web-server:1.1`<br>
+- Client : git clone
+<br><br>
 
 
 <h3>Docker Image 다운 및 실행 방법</h3> <br>
@@ -35,13 +43,6 @@
 - 브라우저를 통해 localhost로 접속한 결과 <br>
 <img width="500" height="250" alt="image" src="https://user-images.githubusercontent.com/98372474/166337952-26e86920-adf7-4ed7-9ce5-8c0130c6d516.png"><br><br>
 
-
-<h3> Ver 1.0 : 간단한 스프링 부트 이미지</h3>
-
-- Docker Image : `docker pull coji68/web-server:1.0`<br>
-<h3> Ver 1.1 : 스프링 부트 도커 이미지를 이용한 통신(업로드 예정)</h3>
-- Docker Image : `docker pull coji68/web-server:1.1`<br>
-<br><br>
 
 ------------------------------------------------------------------------------------------------------------------------------
 **[Spring Boot Docker image 만들기]**<br>
