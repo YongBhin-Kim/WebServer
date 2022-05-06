@@ -26,19 +26,20 @@
 - Docker image 링크 - https://hub.docker.com/r/coji68/web-server/tags <br>
 - 터미널에 명령어 `docker pull coji68/web-server:ver1.x` 을 입력한다. <br>
 <img width="800" height="30" alt="image" src="https://user-images.githubusercontent.com/98372474/166339548-7a06b54f-304e-4016-8d87-5a3c66c9c7f9.png"> <br>
+
 2. 다운받은 image 확인 명령어 : `docker images` <br>
-<img width="800" height="50" alt="image" src="https://user-images.githubusercontent.com/98372474/166339612-af0c191b-e070-455e-a3a2-55cbe5c2ce85.png"> <br>
-3. 다운받은 image를 컨테이너 생성과 동시에 실행 `docker run -p 8080:8080 coji68/web-server:1.0` <br>
+<img width="800" height="50" alt="image" src="https://user-images.githubusercontent.com/98372474/166337688-b2a4e403-d952-4773-842b-ec4349bf4cfa.png"> <br>
 
+3. 다운받은 image를 컨테이너 생성과 동시에 실행 <br>
 - Docker Image 실행 명령어 <br>
-`docker run -p [브라우저포트번호][컨테이너포트번호] -t [레포지이름/이미지이름:태그]` <br><br>
-
-<img width="800" height="40" alt="image" src="https://user-images.githubusercontent.com/98372474/166337688-b2a4e403-d952-4773-842b-ec4349bf4cfa.png"> <br>
-
-
+ `docker run -p [브라우저포트번호][컨테이너포트번호] -t [레포지이름/이미지이름:태그]` <br><br>
+ `docker run -p 8080:8080 coji68/web-server:1.x` <br>
 
 - 명령어 실행 결과 Spring이 정상 작동<br>
-<img width="500" height="250" alt="image" src="https://user-images.githubusercontent.com/98372474/166337984-dd53531a-1544-418a-9091-6c83e8d8f386.png">
+<img width="700" height="300" alt="image" src="https://user-images.githubusercontent.com/98372474/167175447-7dee3ec2-b738-4fb4-ac6a-f9a1dac39390.png"> <br>
+<img width="700" height="300" alt="image" src="https://user-images.githubusercontent.com/98372474/167176771-082a6678-82c9-478f-95d4-be93696f36e3.png"> <br>
+
+
 
 - 브라우저를 통해 localhost로 접속한 결과 <br>
 <img width="500" height="250" alt="image" src="https://user-images.githubusercontent.com/98372474/166337952-26e86920-adf7-4ed7-9ce5-8c0130c6d516.png"><br><br>
@@ -49,7 +50,6 @@
 **[통신을 위한 Client]** <br>
 - git clone한 Client.java 파일을 컴파일한다. `java Client.java`
 - 다음과 같이 Server-Client가 통신이 가능하다.(왼쪽 : Client / 오른쪽 : Server) <br>
-
 <img width="1340" alt="image" src="https://user-images.githubusercontent.com/98372474/167169077-e27e5564-705c-49d2-9243-fc14b9234eee.png"> <br><br>
 
 <br><br><br>
