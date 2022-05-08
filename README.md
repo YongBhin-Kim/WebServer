@@ -40,7 +40,7 @@
 <img width="500" height="250" alt="image" src="https://user-images.githubusercontent.com/98372474/166337952-26e86920-adf7-4ed7-9ce5-8c0130c6d516.png"><br><br>
 
 
-<h3>[2. Server-Client 통신 - Ver1.1] </h3><br>
+<h3>[2. Server-Client 통신 (for ver1.1)] </h3><br>
 
 **[통신을 위한 Client]** <br>
 - git clone한 Client.java 파일을 컴파일한다. 
