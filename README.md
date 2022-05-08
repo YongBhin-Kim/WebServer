@@ -7,9 +7,9 @@
 <br><br>
 
 **[제공하는 것]**
-- 1. Docker Image 다운 & 실행 방법 
-- 2. Client-Server 통신
-- 3. Docker Image 생성
+1. Docker Image 다운 & 실행 방법 <br>
+2. Client-Server 통신 <br>
+3. Docker Image 생성 <br>
 - ver1.0 : 간단한 스프링 부트 이미지
 - - Docker Image : `docker pull coji68/web-server:1.0`
 - ver1.1 : 스프링 부트 도커 이미지를 이용한 통신(현재 git에 올라온 code)
