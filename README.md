@@ -26,12 +26,15 @@
 - 터미널에 명령어 `docker pull coji68/web-server:ver1.x` 을 입력한다. <br>
 <img width="800" height="30" alt="image" src="https://user-images.githubusercontent.com/98372474/166339548-7a06b54f-304e-4016-8d87-5a3c66c9c7f9.png"> <br>
 
-2. 다운받은 image 확인 명령어 : `docker images` <br>
+2. 다운로드한 image 확인 명령어 : `docker images` <br>
 <img width="800" height="50" alt="image" src="https://user-images.githubusercontent.com/98372474/166337688-b2a4e403-d952-4773-842b-ec4349bf4cfa.png"> <br>
 
-3. 다운받은 image를 컨테이너 생성과 동시에 실행 <br>
+3. 다운로드한 image를 컨테이너 생성과 동시에 실행 <br>
 - Docker Image 실행 명령어 <br>
  `docker run -p [브라우저포트번호][컨테이너포트번호] -t [레포지이름/이미지이름:태그]` <br><br>
+ ver1.0 : `docker run -p 8080:8080 -t coji68/web-server:1.0` <br>
+ ver1.1 : `docker run -p 10000:10000 -t coji68/web-server:1.1` <br>
+ <br><br>
 
 - 명령어 실행 결과 Spring이 정상 작동<br>
 <img width="700" height="300" alt="image" src="https://user-images.githubusercontent.com/98372474/167175447-7dee3ec2-b738-4fb4-ac6a-f9a1dac39390.png"> <br>
