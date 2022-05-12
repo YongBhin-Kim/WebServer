@@ -39,19 +39,28 @@
 - 명령어 실행 결과 Spring이 정상 작동<br>
 <img width="700" height="300" alt="image" src="https://user-images.githubusercontent.com/98372474/167175447-7dee3ec2-b738-4fb4-ac6a-f9a1dac39390.png"> <br>
 
-- 브라우저를 통해 localhost로 접속한 결과 <br>
+- 브라우저를 통해 localhost로 접속한 결과(ver1.0) <br>
 <img width="500" height="250" alt="image" src="https://user-images.githubusercontent.com/98372474/166337952-26e86920-adf7-4ed7-9ce5-8c0130c6d516.png"><br><br>
 
 
 <h3>[2. Server-Client 통신 (for ver1.1)] </h3><br>
 
+**[통신을 위한 Server]** <br>
+- 다운받은 도커 이미지를 브라우저/컨테이너 포트번호를 10000으로 열어준다.(스프링 내부 구현을 10000포트로 했습니다.)
+- 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.1` <br>
+
 **[통신을 위한 Client]** <br>
 - git clone한 Client.java 파일을 컴파일한다. 
 - 터미널에 명령어 입력 `java Client.java`<br>
 
-**[통신을 위한 Server]** <br>
-- 다운받은 도커 이미지를 브라우저/컨테이너 포트번호를 10000으로 열어준다.(스프링 내부 구현을 10000포트로 했습니다.)
-- 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.x` <br>
+**다음과 같이 Server-Client가 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
+(예시 - 통신의 순서)
+- Server - 포트번호 10000으로 서버를 열고 클라이언트의 접속을 기다린다.
+- Client - 포트번호 10000으로 접속을 요청한다.
+- Server-Client 연결 완료
+- Client - Input : 'aaaaa' 작성 
+- Server - Client로부터 전달받은 'aaaaa'를 Client에게 재전송
+- Client - From Server : 'aaaaa' 서버로부터 재전송받은 메시지를 standard output(모니터)으로 출력
 
 **다음과 같이 Server-Client가 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
 <img width="1429" alt="image" src="https://user-images.githubusercontent.com/98372474/167178601-d1e7a872-c7f9-4681-8b37-e68ef0f0b977.png"><br><br>
