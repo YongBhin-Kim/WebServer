@@ -24,7 +24,7 @@
 1. Docker image 다운 <br>
 - Docker image 링크 - https://hub.docker.com/r/coji68/web-server/tags <br>
 - 터미널에 명령어 `docker pull coji68/web-server:ver1.x` 을 입력한다. <br>
-<img width="800" height="30" alt="image" src="https://user-images.githubusercontent.com/98372474/166339548-7a06b54f-304e-4016-8d87-5a3c66c9c7f9.png"> <br>
+<img width="750" height="30" alt="image" src="https://user-images.githubusercontent.com/98372474/166339548-7a06b54f-304e-4016-8d87-5a3c66c9c7f9.png"> <br>
 
 2. 다운로드한 image 확인 명령어 : `docker images` <br>
 <img width="800" height="50" alt="image" src="https://user-images.githubusercontent.com/98372474/166337688-b2a4e403-d952-4773-842b-ec4349bf4cfa.png"> <br>
