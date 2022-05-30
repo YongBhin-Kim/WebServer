@@ -72,7 +72,15 @@
   
 <h3>[2. JNI를 이용한 암/복호화가 추가된 Server-Client 통신 (for ver1.2)] </h3><br>
 
-- JNI를 이용하여 ver1.1 위에 암/복호화를 씌운다.
+**[JNI를 이용하여 ver1.1 위에 암/복호화를 씌운다]** <br>
+
+- Client - 'aaaaa'을 jstring모듈을 이용하여 C로 인자로 넘긴다.
+- C - Client로부터 받은 'aaaaa'를 블록암호를 이용하여 암호화한 후 Client로 넘긴다.
+- Client - Server로 암호문을 전송한다.
+- Server - Cleient로부터 받은 암호문을 jstring모듈을 이용하여 C로 인자로 넘긴다.
+- C - Server로부터 받은 암호문을 블록암호를 이용하여 복호화한 후 복호문 'aaaaa'(= 평문)을 Server로 넘긴다.
+- Server - Client로부터 받은 평문을 확인한다.
+
 
 ------------------------------------------------------------------------------------------------------------------------------
 <h3>[3. Spring Boot Docker image 생성, Docker Hub에 올리기]</h3> <br>
