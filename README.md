@@ -1,4 +1,4 @@
-<h2>(학부연구생) Spring Boot Docker Image를 이용한 Client-Server 통신</h2>
+<h2>(국민대학교 학부연구생) SpringBoot Client-to-Server 암/복호화 통신 - Java Native Interface </h2>
 
 **[Docker image Environment]**
 - Docker image
@@ -72,7 +72,7 @@
   
 <h3>[2. JNI를 이용한 암/복호화가 추가된 Server-Client 통신 (for ver1.2)] </h3><br>
 
-**[JNI를 이용하여 ver1.1 위에 암/복호화를 씌운다]** <br>
+**[JNI를 이용하여 ver1.1 위에 C language 블록암호 암호화/복호화 과정을 추가한다.]** <br>
 
 - Client - jni 이용을 선언한다.
 - C - 입력받은 메시지를 블록암호를 이용하여 암호화한 후 Client로 넘긴다.
