@@ -88,14 +88,13 @@
 - C - Client로부터 받은 암호문을 블록암호를 이용하여 복호화한 후 복호문(= 평문)을 Client로 넘긴다.
 - Client - Server로부터 받은(C로 복호화한) 평문을 확인한다.
 
-- 여기서 JNI를 이용한 암/복호화까지 완료하였고, Client의 암호화와 복호화의 분리(JNI 2번 사용) 진행 예정
+- Client 암/복호화 구현 및 서버와의 통신 구현 (완료) ####
+- Server 암/복호화 구현 (진행중)
 
 **다음과 같이 Server-Client가 JNI를 이용하여 암/복호화된 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
-<img width="630" alt="image" src="https://user-images.githubusercontent.com/98372474/171268608-180b005d-3bbc-4f39-b90e-c73cb366b350.png"> <br>
 
-<img width="630" alt="image" src="https://user-images.githubusercontent.com/98372474/171268559-3cdd7fec-416e-463d-afc7-2c6aee6563a3.png"> <br>
+<img width="736" alt="image" src="https://user-images.githubusercontent.com/98372474/171696628-06f92077-6ec5-4fcd-ac61-f545d0b909e3.png">
 
-- Server - Client로부터 받은 평문을 확인한다.
 
 
 ------------------------------------------------------------------------------------------------------------------------------
