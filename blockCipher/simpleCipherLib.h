@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
-void Enc(char PT[128], char key[10]);
-void Dec(char CT[128], char key[10]);
-void printState(char state[128]);
+void Enc(int PT[128], int key[10]);
+void Dec(int CT[128], int key[10]);
+void printState(int state[128]);
 
 // 암호화
-void Enc(char PT[128], char key[10]) {
-    int num = 0; 
-    while(num < strlen(PT)){
-        for(int i=0; i<strlen(key); i++) {
+void Enc(int PT[128], int key[10]) {
+    int num = 0;
+    while(num < 128) {
+        for(int i=0; i<10; i++) {
             PT[num] = PT[num] ^ key[i];
             num++;
         }
@@ -17,10 +17,10 @@ void Enc(char PT[128], char key[10]) {
 }
 
 // 복호화
-void Dec(char CT[128], char key[10]) {
+void Dec(int CT[128], int key[10]) {
     int num = 0;
-    while(num < strlen(CT)){
-        for(int i=0; i<strlen(key); i++) {
+    while(num < 128){
+        for(int i=0; i<10; i++) {
             CT[num] = CT[num] ^ key[i];
             num++;
         }
@@ -28,14 +28,14 @@ void Dec(char CT[128], char key[10]) {
 }
  
 // 암호문 출력 함수
-void printState(char state[128]) {
-    for (int i=0; i<strlen(state); i++) {
-        printf("%02x ", state[i]);
+void printState(int state[128]) {
+    for (int i=0; i<128; i++) {
+        printf("%d ", state[i]);
     } printf("\n");
 }
 
-void printStateASCII(char state[128]) {
-    for (int i=0; i<strlen(state); i++) {
+void printStateASCII(int state[128]) {
+    for (int i=0; i<128; i++) {
         printf("%c ", state[i]);
     } printf("\n");
 }
