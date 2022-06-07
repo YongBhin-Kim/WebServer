@@ -7,7 +7,7 @@
 <br><br>
 
 **[제공하는 것]**
-1. Docker Image 다운 & 실행 방법 <br>
+1. Docker Image 다운로드 & 실행 방법 <br>
 2. Client-Server 통신 <br>
 3. Docker Image 생성 <br>
 - ver1.0 : 간단한 스프링 부트 이미지
