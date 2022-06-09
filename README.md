@@ -74,19 +74,19 @@
 
 **[JNI를 이용하여 ver1.1 위에 C language 블록암호 암호화/복호화 과정을 추가한다.]** <br>
 
-- Client - jni 이용을 선언한다.
-- C - 입력받은 메시지를 블록암호를 이용하여 암호화한 후 Client로 넘긴다.
-- Client - Server로 암호문을 전송한다.
-- Server - jni를 이용하여 Client로부터 받은 암호문을 C로 넘긴다.
-- C - Server로부터 받은 암호문을 블록암호를 이용하여 복호화한 후 복호문(= 평문)을 Server로 넘긴다.
-- Server - Client로부터 받은(C로 복호화한) 평문을 확인한다.
+- (Client) - jni 이용을 선언한다.
+- (C) - 입력받은 메시지를 블록암호를 이용하여 암호화한 후 Client로 넘긴다.
+- (Client) - Server로 암호문을 전송한다.
+- (Server) - jni를 이용하여 Client로부터 받은 암호문을 C로 넘긴다.
+- (C) - Server로부터 받은 암호문을 블록암호를 이용하여 복호화한 후 복호문(= 평문)을 Server로 넘긴다.
+- (Server) - Client로부터 받은(C로 복호화한) 평문을 확인한다.
 
-- Server - jni 이용을 선언한다. 
-- C - 입력받은 메시지를 블록암호를 이용하여 암호화한 후 Server로 넘긴다.
-- Server - Client로 암호문을 전송한다.
-- Client - jni를 이용하여 Server로부터 받은 암호문을 C로 넘긴다.
-- C - Client로부터 받은 암호문을 블록암호를 이용하여 복호화한 후 복호문(= 평문)을 Client로 넘긴다.
-- Client - Server로부터 받은(C로 복호화한) 평문을 확인한다.
+- (Server) - jni 이용을 선언한다. 
+- (C) - 입력받은 메시지를 블록암호를 이용하여 암호화한 후 Server로 넘긴다.
+- (Server) - Client로 암호문을 전송한다.
+- (Client) - jni를 이용하여 Server로부터 받은 암호문을 C로 넘긴다.
+- (C) - Client로부터 받은 암호문을 블록암호를 이용하여 복호화한 후 복호문(= 평문)을 Client로 넘긴다.
+- (Client) - Server로부터 받은(C로 복호화한) 평문을 확인한다.
 
 - Client 암/복호화 구현 및 서버와의 통신 구현 (완료) ####
 - Server 암/복호화 구현 (진행중)
