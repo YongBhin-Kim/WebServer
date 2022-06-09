@@ -24,6 +24,8 @@
 <h3>[1. Docker Image 다운 및 실행 방법]</h3> <br>
 
 **[Spring Boot Docker image (Server) 실행하기]** <br>
+Window환경 Test <br>
+-> 시도1) Docker Container 로그인이 제대로 되었는지? <br>
 1. Docker image 다운 <br>
 - Docker image 링크 - https://hub.docker.com/r/coji68/web-server/tags <br>
 - 터미널에 명령어 `docker pull coji68/web-server:ver1.x` 을 입력한다. <br>
