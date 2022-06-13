@@ -15,7 +15,7 @@
 - ver1.1 : 스프링 부트 도커 이미지를 이용한 통신(현재 git에 올라온 code)
 - - Docker Image(Server) : `docker pull coji68/web-server:1.1`
 - - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git` <br>
-- ver1.2 : JNI를 이용한 암/복호화 통신 스프링 부트 도커 이미지 (---- 진행중)
+- ver1.2 : JNI를 이용한 암/복호화 통신 스프링 부트 도커 이미지 (---- 진행중 ----)
 - - Docker Image(Server) : `docker pull coji68/web-server:1.2`
 - - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git` <br>
 <br><br><br>
@@ -26,6 +26,7 @@
 **[Spring Boot Docker image (Server) 실행하기]** <br>
 Window환경 Test <br>
 -> 시도1) Docker Container 로그인이 제대로 되었는지? <br>
+-> 시도2) 터미널에서 Docker Login (Docker 회원가입 필요)
 1. Docker image 다운 <br>
 - Docker image 링크 - https://hub.docker.com/r/coji68/web-server/tags <br>
 - 터미널에 명령어 `docker pull coji68/web-server:ver1.x` 을 입력한다. <br>
