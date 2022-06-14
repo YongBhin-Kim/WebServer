@@ -24,9 +24,7 @@
 <h3>[1. Docker Image 다운 및 실행 방법]</h3> <br>
 
 **[Spring Boot Docker image (Server) 실행하기]** <br>
-Window환경 Test <br>
--> 시도1) Docker Container 로그인이 제대로 되었는지? <br>
--> 시도2) 터미널에서 Docker Login (Docker 회원가입 필요)
+0. Docker Container 로그인<br>
 1. Docker image 다운 <br>
 - Docker image 링크 - https://hub.docker.com/r/coji68/web-server/tags <br>
 - 터미널에 명령어 `docker pull coji68/web-server:ver1.x` 을 입력한다. <br>
@@ -56,8 +54,16 @@ Window환경 Test <br>
 - 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.1` <br>
 
 **[통신을 위한 Client]** <br>
-- git clone한 Client.java 파일을 컴파일한다. 
-- 터미널에 명령어 입력 `java [Client 폴더의 경로]/Client.java`<br>
+- git clone을 마쳤으면 BlockCipher 라이브러리를 컴파일하고 Client.java 파일을 컴파일한다.
+- 1)라이브러리 컴파일
+`$ gcc -I”/[JDK 경로]/Contents/Home/include" -I”/[JDK 경로]/Contents/Home/include/darwin" -o libBlockCipher.jnilib -shared Client.c` <br>
+
+- 2)라이브러리 참조 가져오기
+`$ java -Djava.library.path=. Client` <br>
+
+- 3)직접 컴파일
+- 터미널에 명령어 입력 `$ java [Client 폴더의 경로]/Client.java`<br>
+<br>
 
 **다음과 같이 Server-Client가 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
 (예시 - 통신의 순서)
