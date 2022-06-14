@@ -57,7 +57,7 @@ Window환경 Test <br>
 
 **[통신을 위한 Client]** <br>
 - git clone한 Client.java 파일을 컴파일한다. 
-- 터미널에 명령어 입력 `java Client.java`<br>
+- 터미널에 명령어 입력 `java [Client 폴더의 경로]/Client.java`<br>
 
 **다음과 같이 Server-Client가 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
 (예시 - 통신의 순서)
