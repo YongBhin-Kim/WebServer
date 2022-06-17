@@ -1,4 +1,4 @@
-<h2>(학부연구생) Spring Boot Docker Image를 이용한 Client-Server 통신</h2>
+<h2>(국민대학교 학부연구생) SpringBoot Client-to-Server 암/복호화 통신 - Java Native Interface </h2>
 
 **[Docker image Environment]**
 - Docker image
@@ -7,7 +7,7 @@
 <br><br>
 
 **[제공하는 것]**
-1. Docker Image 다운 & 실행 방법 <br>
+1. Docker Image 다운로드 & 실행 방법 <br>
 2. Client-Server 통신 <br>
 3. Docker Image 생성 <br>
 - ver1.0 : 간단한 스프링 부트 이미지
@@ -15,7 +15,7 @@
 - ver1.1 : 스프링 부트 도커 이미지를 이용한 통신(현재 git에 올라온 code)
 - - Docker Image(Server) : `docker pull coji68/web-server:1.1`
 - - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git` <br>
-- ver1.2 : JNI를 이용한 암/복호화 통신 스프링 부트 도커 이미지 (---- 진행중)
+- ver1.2 : JNI를 이용한 암/복호화 통신 스프링 부트 도커 이미지 (---- 진행중 ----)
 - - Docker Image(Server) : `docker pull coji68/web-server:1.2`
 - - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git` <br>
 <br><br><br>
@@ -24,6 +24,7 @@
 <h3>[1. Docker Image 다운 및 실행 방법]</h3> <br>
 
 **[Spring Boot Docker image (Server) 실행하기]** <br>
+0. Docker Container 로그인<br>
 1. Docker image 다운 <br>
 - Docker image 링크 - https://hub.docker.com/r/coji68/web-server/tags <br>
 - 터미널에 명령어 `docker pull coji68/web-server:ver1.x` 을 입력한다. <br>
@@ -48,13 +49,22 @@
 
 <h3>[2. Server-Client 통신 (for ver1.1)] </h3><br>
 
+(windows환경 실험중)<br>
 **[통신을 위한 Server]** <br>
 - 다운받은 도커 이미지를 브라우저/컨테이너 포트번호를 10000으로 열어준다.(스프링 내부 구현을 10000포트로 했습니다.)
 - 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.1` <br>
 
 **[통신을 위한 Client]** <br>
-- git clone한 Client.java 파일을 컴파일한다. 
-- 터미널에 명령어 입력 `java Client.java`<br>
+- git clone을 마쳤으면 BlockCipher 라이브러리를 컴파일하고 Client.java 파일을 컴파일한다.
+- 1)라이브러리 컴파일
+`$ gcc -I”/[JDK 경로]/Contents/Home/include" -I”/[JDK 경로]/Contents/Home/include/darwin" -o libBlockCipher.jnilib -shared Client.c` <br>
+
+- 2)라이브러리 참조 가져오기
+`$ java -Djava.library.path=. Client` <br>
+
+- 3)직접 컴파일
+- 터미널에 명령어 입력 `$ java [Client 폴더의 경로]/Client.java`<br>
+<br>
 
 **다음과 같이 Server-Client가 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
 (예시 - 통신의 순서)
@@ -72,21 +82,21 @@
   
 <h3>[2. JNI를 이용한 암/복호화가 추가된 Server-Client 통신 (for ver1.2)] </h3><br>
 
-**[JNI를 이용하여 ver1.1 위에 암/복호화를 씌운다]** <br>
+**[JNI를 이용하여 ver1.1 위에 C language 블록암호 암호화/복호화 과정을 추가한다.]** <br>
 
-- Client - jni 이용을 선언한다.
-- C - 입력받은 메시지를 블록암호를 이용하여 암호화한 후 Client로 넘긴다.
-- Client - Server로 암호문을 전송한다.
-- Server - jni를 이용하여 Client로부터 받은 암호문을 C로 넘긴다.
-- C - Server로부터 받은 암호문을 블록암호를 이용하여 복호화한 후 복호문(= 평문)을 Server로 넘긴다.
-- Server - Client로부터 받은(C로 복호화한) 평문을 확인한다.
+- (Client) - jni 이용을 선언한다.
+- (C) - 입력받은 메시지를 블록암호를 이용하여 암호화한 후 Client로 넘긴다.
+- (Client) - Server로 암호문을 전송한다.
+- (Server) - jni를 이용하여 Client로부터 받은 암호문을 C로 넘긴다.
+- (C) - Server로부터 받은 암호문을 블록암호를 이용하여 복호화한 후 복호문(= 평문)을 Server로 넘긴다.
+- (Server) - Client로부터 받은(C로 복호화한) 평문을 확인한다.
 
-- Server - jni 이용을 선언한다. 
-- C - 입력받은 메시지를 블록암호를 이용하여 암호화한 후 Server로 넘긴다.
-- Server - Client로 암호문을 전송한다.
-- Client - jni를 이용하여 Server로부터 받은 암호문을 C로 넘긴다.
-- C - Client로부터 받은 암호문을 블록암호를 이용하여 복호화한 후 복호문(= 평문)을 Client로 넘긴다.
-- Client - Server로부터 받은(C로 복호화한) 평문을 확인한다.
+- (Server) - jni 이용을 선언한다. 
+- (C) - 입력받은 메시지를 블록암호를 이용하여 암호화한 후 Server로 넘긴다.
+- (Server) - Client로 암호문을 전송한다.
+- (Client) - jni를 이용하여 Server로부터 받은 암호문을 C로 넘긴다.
+- (C) - Client로부터 받은 암호문을 블록암호를 이용하여 복호화한 후 복호문(= 평문)을 Client로 넘긴다.
+- (Client) - Server로부터 받은(C로 복호화한) 평문을 확인한다.
 
 - Client 암/복호화 구현 및 서버와의 통신 구현 (완료) ####
 - Server 암/복호화 구현 (진행중)
@@ -94,7 +104,6 @@
 **다음과 같이 Server-Client가 JNI를 이용하여 암/복호화된 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
 
 <img width="736" alt="image" src="https://user-images.githubusercontent.com/98372474/171696628-06f92077-6ec5-4fcd-ac61-f545d0b909e3.png">
-
 
 
 ------------------------------------------------------------------------------------------------------------------------------
