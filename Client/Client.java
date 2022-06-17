@@ -18,28 +18,24 @@ class Client {
     public static void main(String argv[]) throws Exception { 
 
         // Socket clientSocketForSpring = new Socket("localhost", 8080); // Docker Image 다운 시에는 필요 없음.
-        Socket clientSocket = new Socket("localhost", 10000);
+        Socket clientSocket = new Socket("localhost", 10000); // Client 포트 : 10000
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
-        String[] PT = stringToHex(inFromUser.readLine()).split(" ");
+        String[] PT = stringToHex(inFromUser.readLine()).split(" "); 
 
         int[] PT2 = new int[PT.length];
         for (int i = 0; i < PT.length; i++) {
             PT2[i] = Integer.parseInt(PT[i]);
-        } // PT2 배열 JNI로 넘기기!!
+        } // int 배열 JNI를 이용하여 C로 넘기기
 
         Client h = new Client();
-        // int[] t = new int[PT.length];
-        int[] out = h.Enc(PT2);
+        int[] out = h.Enc(PT2); // out = int[128]
         StringBuilder inttoSB = new StringBuilder();
-        // out = int[128]
-        // out = String
-        // send(out)
         for (int i = 0; i < 128; i++) {
-            inttoSB.append(String.valueOf(out[i]));
+            inttoSB.append(String.valueOf(out[i])); // out : String 배열
             inttoSB.append(" ");
-        }
-        String clientSentence = inttoSB.toString();
-
+        } 
+        String clientSentence = inttoSB.toString(); // clientSentenct : String 배열
+        /////// 여기부터 /////
         //  C에서 stdin으로 메시지를 입력받아 암호화한 후 가져와서 Server로 보낸다.        
 
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream()); 
@@ -47,10 +43,8 @@ class Client {
 
         BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream())); 
         String receivedSentence = inFromServer.readLine();
-        // System.out.println("[받은 메시지 : java]\n");
-        // System.out.println(receivedSentence + "\n");
         String[] CT = receivedSentence.split(" ");
-        int[] CT2 = new int[CT.length]; // 잘못됨
+        int[] CT2 = new int[CT.length];
         for (int i = 0; i < CT.length; i++) {
             CT2[i] = Integer.parseInt(CT[i]);
         } // PT2 배열 JNI로 넘기기!!
