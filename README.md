@@ -2,7 +2,7 @@
 
 **[Docker image Environment]**
 - Docker image
-- Language : Java
+- Language : Java, C
 - Framework : Spring Boot(Gradle)
 <br><br>
 
