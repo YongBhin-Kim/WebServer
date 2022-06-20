@@ -99,13 +99,17 @@
 - (Client) - Server로부터 받은(C로 복호화한) 평문을 확인한다.
 
 - Client 암/복호화 구현 및 서버와의 통신 구현 기능 구현
-- 대/소문자 둘 다 인식 가능, ASCII에 속한 모든 문자 구현(+최적화)
+- 대/소문자 둘 다 인식 가능, ASCII에 속한 모든 문자 구현
 - Server 암/복호화 구현 (진행중 - 서버에서는 의존성을 수정해야 한다.) ###
 
-**다음과 같이 Server-Client가 JNI를 이용하여 암/복호화된 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
+**다음과 같이 Server-Client가 JNI를 이용하여 암/복호화된 통신이 가능하다.** <br>
+**[Server]**
 
-<img width="736" alt="image" src="https://user-images.githubusercontent.com/98372474/171696628-06f92077-6ec5-4fcd-ac61-f545d0b909e3.png">
+<img width="714" alt="image" src="https://user-images.githubusercontent.com/98372474/174623814-4b2e4f7a-ebed-46dd-ae15-f7071f108c78.png"> <br>
 
+**[Client]**
+
+<img width="841" alt="image" src="https://user-images.githubusercontent.com/98372474/174623887-fb366591-93a6-4883-af1a-8fa23dbd034b.png"> <br>
 
 ------------------------------------------------------------------------------------------------------------------------------
 <h3>[3. Spring Boot Docker image 생성, Docker Hub에 올리기]</h3> <br>
