@@ -2,7 +2,7 @@
 
 **[Docker image Environment]**
 - Docker image
-- Language : Java
+- Language : Java, C
 - Framework : Spring Boot(Gradle)
 <br><br>
 
@@ -98,8 +98,9 @@
 - (C) - Client로부터 받은 암호문을 블록암호를 이용하여 복호화한 후 복호문(= 평문)을 Client로 넘긴다.
 - (Client) - Server로부터 받은(C로 복호화한) 평문을 확인한다.
 
-- Client 암/복호화 구현 및 서버와의 통신 구현 (완료) ####
-- Server 암/복호화 구현 (진행중)
+- Client 암/복호화 구현 및 서버와의 통신 구현 기능 구현
+- 대/소문자 둘 다 인식 가능, ASCII에 속한 모든 문자 구현(+최적화)
+- Server 암/복호화 구현 (진행중 - 서버에서는 의존성을 수정해야 한다.) ###
 
 **다음과 같이 Server-Client가 JNI를 이용하여 암/복호화된 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
 
