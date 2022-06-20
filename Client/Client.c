@@ -82,7 +82,7 @@ JNIEXPORT jintArray JNICALL Java_Client_Enc(JNIEnv *env, jobject jobj, jintArray
     int intkey[10];
     for (int i = 0; i < 10; i++) {
         intkey[i] = key[i];
-        // printf("%d", intkey[i]);
+        // printf("intkey = %d", intkey[i]);
     }
     
     out = (*env)->NewIntArray(env, 128);
@@ -100,11 +100,11 @@ JNIEXPORT jintArray JNICALL Java_Client_Enc(JNIEnv *env, jobject jobj, jintArray
             tmp[i] = byteBuf[i];
         }
     }
-    printf("[입력 메시지] \n");
+    printf("[입력 메시지(int)] \n");
     printState(tmp);
 
     Enc(tmp, intkey);
-    printf("[암호화] \n");
+    printf("[암호화(int)] \n");
     printState(tmp);
     // for (int i = 0; i < 128; i++) {
     //     printf("%d", byteBuf[i]);
@@ -127,7 +127,6 @@ JNIEXPORT jintArray JNICALL Java_Client_Dec(JNIEnv *env, jobject jobj, jintArray
     for (int i = 0; i < 10; i++) {
         intkey[i] = key[i];
     }
-    
     out = (*env)->NewIntArray(env, 128);
     size = (*env)->GetArrayLength(env, arr2);
     byteBuf = (*env)->GetIntArrayElements(env, arr2, 0);
@@ -138,6 +137,8 @@ JNIEXPORT jintArray JNICALL Java_Client_Dec(JNIEnv *env, jobject jobj, jintArray
         // printf("%d ", tmp[i]);
     }
     Dec(tmp, intkey);
+    printf("[복호화(int)]\n");
+    printState(tmp);
 
     (*env)->SetIntArrayRegion(env, out, 0, 128, tmp);
     (*env)->ReleaseIntArrayElements(env, arr2, byteBuf, 0);
