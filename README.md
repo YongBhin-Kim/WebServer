@@ -162,6 +162,7 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 
 <img width="898" alt="image" src="https://user-images.githubusercontent.com/98372474/167174523-79ac92e5-4fb5-46d9-a4f8-9e79db14b5be.png">
 
-- 도커 레포지토리에 올라갔다.
+- 도커 레포지토리에 올라갔는지 확인한다.
+- https://hub.docker.com/
 <img width="1270" alt="image" src="https://user-images.githubusercontent.com/98372474/167174484-82a427f9-e9d2-49a5-8301-3600616d8e46.png">
 
