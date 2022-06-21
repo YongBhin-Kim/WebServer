@@ -47,11 +47,12 @@
 <img width="500" height="250" alt="image" src="https://user-images.githubusercontent.com/98372474/166337952-26e86920-adf7-4ed7-9ce5-8c0130c6d516.png"><br><br>
 
 
-<h3>[2. Server-Client 통신 (for ver1.1)] </h3><br>
+<h3>[2. Server-Client 통신 (for ver1.1, ver1.2)] </h3><br>
 
 **[통신을 위한 Server]** <br>
 - 다운받은 도커 이미지를 브라우저/컨테이너 포트번호를 10000으로 열어준다.(스프링 내부 구현을 10000포트로 했습니다.)
 - 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.1` <br>
+- 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.2` <br>
 
 **[통신을 위한 Client]** <br>
 
@@ -64,7 +65,7 @@ clone한 클라이언트를 사용하려면 몇몇 설정과 명령을 수정해
 <br>
 
 [2. java 클래스파일 재생성] <br>
-- 윈도우는 기본 MS949 인코딩을 사용하나, 작업 파일의 인코딩 UTF-8로 수정하여 javac 명령을 사용한다.
+- 윈도우는 기본 MS949 인코딩을 사용하므로 작업 파일의 인코딩 UTF-8로 수정하여 javac 명령을 사용한다.
 
 macOS : javac Client.java <br>
 Windows : javac Client.java -encoding UTF-8 <br>
@@ -77,28 +78,19 @@ Windows : `javac Client.java -h . -encoding UTF-8` <br>
 
 [4. 라이브러리 컴파일] <br>
 내컴퓨터 우클릭 -> path 뒤에 ;. 추가 <br>
-macOS : <br>
+macOS : `gcc -I”/[JDK 경로]/Contents/Home/include" -I”/[JDK 경로]/Contents/Home/include/darwin" -o libBlockCipher.jnilib -shared Client.c` <br>
 Wiondows : `gcc -I"[jdk경로]/include" -I"[jdk경로]/include/win32" -o libBlockCipher.jnilib -shared Client.c` <br>
 <br>
 
 [5. 라이브러리 경로 가져오기] <br>
-macOS : java -Djava.library.path=. Client <br>
-Windoows : java -Djava.library.path=[라이브러리(libBlockCipher.jnilib) 절대경로] Client <br>
+macOS : `java -Djava.library.path=. Client` <br>
+Windoows : `java -Djava.library.path=[라이브러리(libBlockCipher.jnilib) 절대경로] Client` <br>
 <br>
 
 [6. (공통)클라이언트 컴파일] <br>
 `java Client.java` <br>
 <br>
 -----------------------------------------<br>
-
-- 1)라이브러리 컴파일
-`$ gcc -I”/[JDK 경로]/Contents/Home/include" -I”/[JDK 경로]/Contents/Home/include/darwin" -o libBlockCipher.jnilib -shared Client.c` <br>
-
-- 2)라이브러리 참조 가져오기
-`$ java -Djava.library.path=. Client` <br>
-
-- 3)직접 컴파일
-- 터미널에 명령어 입력 `$ java [Client 폴더의 경로]/Client.java`<br>
 <br>
 
 **다음과 같이 Server-Client가 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
