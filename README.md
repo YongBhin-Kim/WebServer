@@ -99,9 +99,9 @@ Windoows : `java -Djava.library.path=[라이브러리(libBlockCipher.jnilib) 절
 - Server - 포트번호 10000으로 서버를 열고 클라이언트의 접속을 기다린다.
 - Client - 포트번호 10000으로 접속을 요청한다.
 - Server-Client 연결 완료
-- Client - Input : 'aaaaa' 작성 
-- Server - Client로부터 전달받은 'aaaaa'를 Client에게 재전송
-- Client - From Server : 'aaaaa' 서버로부터 재전송받은 메시지를 standard output(모니터)으로 출력
+- Client - Input : 'message' 작성 
+- Server - Client로부터 전달받은 'message'를 Client에게 재전송
+- Client - From Server : 'message' 서버로부터 재전송받은 메시지를 standard output(모니터)으로 출력
 
 **다음과 같이 Server-Client가 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
 <img width="1429" alt="image" src="https://user-images.githubusercontent.com/98372474/167178601-d1e7a872-c7f9-4681-8b37-e68ef0f0b977.png"><br><br>
