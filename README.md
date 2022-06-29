@@ -18,7 +18,8 @@
 - ver1.2 : JNI를 이용한 암/복호화 통신 스프링 부트 도커 이미지
 - - Docker Image(Server) : `docker pull coji68/web-server:1.2` (업데이트 완료)
 - - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git`
-- - Docker Image(Client) : `docker pull coji68/web-client:1.2` (준비중...)
+- - Docker Image(Client) : `docker pull coji68/web-client:1.2` (로컬 실행)
+- - (Server 최적화 진행중...)
 <br><br><br>
 
 
