@@ -39,6 +39,7 @@
  `docker run -p [브라우저포트번호][컨테이너포트번호] -t [레포지이름/이미지이름:태그]` <br><br>
  ver1.0 : `docker run -p 8080:8080 -t coji68/web-server:1.0` <br>
  ver1.1 : `docker run -p 10000:10000 -t coji68/web-server:1.1` <br>
+ ver1.2 : `docker run -p 10000:10000 -t coji68/web-server:1.2` <br>
  <br><br>
 
 - 명령어 실행 결과 Spring이 정상 작동<br>
@@ -48,7 +49,10 @@
 <img width="500" height="250" alt="image" src="https://user-images.githubusercontent.com/98372474/166337952-26e86920-adf7-4ed7-9ce5-8c0130c6d516.png"><br><br>
 
 
-<h3>[2. Server-Client 통신 (for ver1.1, ver1.2)] </h3><br>
+<h3>[2. Server-Client 통신] </h3><br>
+
+- Server (ver 1.1)
+- Server (ver 1.2)
 
 **[통신을 위한 Server]** <br>
 - 다운받은 도커 이미지를 브라우저/컨테이너 포트번호를 10000으로 열어준다.(스프링 내부 구현을 10000포트로 했습니다.)
@@ -57,15 +61,13 @@
 
 **[통신을 위한 Client]** <br>
 
-
------------------------------------------<br>
 clone한 클라이언트를 사용하려면 몇몇 설정과 명령을 수정해야 하며 windows와 macOS의 사용 방법이 다르다.<br>
-[1. (Windows) jni_md.h 파일을 다음과 같이 수정한다.] <br>
+[1. (Windows만 해당) jni_md.h 파일을 다음과 같이 수정한다.] <br>
 
 ![image](https://user-images.githubusercontent.com/98372474/174834119-74b35e3c-ad67-4c37-b539-10e1d55296b9.png)<br>
 <br>
 
-[2. java 클래스파일 재생성] <br>
+[2. java 클래스파일 생성] <br>
 - 윈도우는 기본 MS949 인코딩을 사용하므로 작업 파일의 인코딩 UTF-8로 수정하여 javac 명령을 사용한다.
 
 macOS : javac Client.java <br>
@@ -78,8 +80,8 @@ Windows : `javac Client.java -h . -encoding UTF-8` <br>
 <br>
 
 [4. 라이브러리 컴파일] <br>
-내pc 우클릭 -> 속성 -> 관련설정 -> 고급 시스템 설정 -> 환경 변수 -> 시스템 변수 -> CLASSPATH의 변수값을 `%JAVA_HOME%\lib;.` 으로 설정 <br>
 macOS : `gcc -I”/[JDK 경로]/Contents/Home/include" -I”/[JDK 경로]/Contents/Home/include/darwin" -o libBlockCipher.jnilib -shared Client.c` <br>
+Windows : 내pc 우클릭 -> 속성 -> 관련설정 -> 고급 시스템 설정 -> 환경 변수 -> 시스템 변수 -> CLASSPATH의 변수값을 `%JAVA_HOME%\lib;.` 으로 설정 <br>
 Windows : `gcc -I"[jdk경로]/include" -I"[jdk경로]/include/win32" -o libBlockCipher.jnilib -shared Client.c` <br>
 <br>
 
