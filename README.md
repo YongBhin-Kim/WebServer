@@ -78,14 +78,14 @@ Windows : `javac Client.java -h . -encoding UTF-8` <br>
 <br>
 
 [4. 라이브러리 컴파일] <br>
-내컴퓨터 우클릭 -> 속성 ->  path %java_home%;. 으로 설정 <br>
+내pc 우클릭 -> 속성 -> 관련설정 -> 고급 시스템 설정 -> 환경 변수 -> 시스템 변수 -> CLASSPATH의 변수값을 `%JAVA_HOME%\lib;.` 으로 설정 <br>
 macOS : `gcc -I”/[JDK 경로]/Contents/Home/include" -I”/[JDK 경로]/Contents/Home/include/darwin" -o libBlockCipher.jnilib -shared Client.c` <br>
-Wiondows : `gcc -I"[jdk경로]/include" -I"[jdk경로]/include/win32" -o libBlockCipher.jnilib -shared Client.c` <br>
+Windows : `gcc -I"[jdk경로]/include" -I"[jdk경로]/include/win32" -o libBlockCipher.jnilib -shared Client.c` <br>
 <br>
 
 [5. 라이브러리 경로 가져오기] <br>
 macOS : `java -Djava.library.path=. Client` <br>
-Windoows : `java -Djava.library.path=[라이브러리(libBlockCipher.jnilib) 절대경로] Client` <br>
+Windows : `java -Djava.library.path=[라이브러리(libBlockCipher.jnilib) 절대경로] Client` <br>
 <br>
 
 [6. (공통)클라이언트 컴파일] <br>
