@@ -20,7 +20,9 @@
 - - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git`
 - - Docker Image(Client) : x (로컬 실행)
 - ver1.2.1 : 
-- - Docker Image(Server) 최적화 진행중...
+- - Docker Image(Server) 최적화 테스트 단계
+- ver1.2.2 : 
+- - Docker Image(Server) : `docker pull coji68/web-server:1.2.2` (22-07-01 업데이트 완료)
 <br><br><br>
 
 
