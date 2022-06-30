@@ -57,7 +57,7 @@
 
 - Server (ver 1.1)
 - Server (ver 1.2)
-- Server (ver 1.2.1) 준비중
+- Server (ver 1.2.2)
 
 **[통신을 위한 Server]** <br>
 - 다운받은 도커 이미지를 브라우저/컨테이너 포트번호를 10000으로 열어준다.(스프링 내부 구현을 10000포트로 했습니다.)
@@ -115,11 +115,6 @@ Client.java 파일이 존재하는 폴더 내에서 명령어 입력 <br>
 - ver 1.1
 <img width="1429" alt="image" src="https://user-images.githubusercontent.com/98372474/167178601-d1e7a872-c7f9-4681-8b37-e68ef0f0b977.png"><br><br>
 
-- ver 1.2.2
-<img width="1436" alt="image" src="https://user-images.githubusercontent.com/98372474/176786776-1e5df1e4-6aac-4f9c-addc-639da4226cb0.png"><br><br>
-
-<img width="1429" alt="image" src="https://user-images.githubusercontent.com/98372474/167178601-d1e7a872-c7f9-4681-8b37-e68ef0f0b977.png"><br><br>
-
 <br><br><br>
   
 <h3>[2. JNI를 이용한 암/복호화가 추가된 Server-Client 통신 (for ver1.2)] </h3><br>
@@ -152,6 +147,13 @@ Client.java 파일이 존재하는 폴더 내에서 명령어 입력 <br>
 **[Client]**
 
 <img width="841" alt="image" src="https://user-images.githubusercontent.com/98372474/174623887-fb366591-93a6-4883-af1a-8fa23dbd034b.png"> <br>
+<br>
+
+- ver 1.2.2
+<img width="1436" alt="image" src="https://user-images.githubusercontent.com/98372474/176786776-1e5df1e4-6aac-4f9c-addc-639da4226cb0.png"><br><br>
+
+<img width="1429" alt="image" src="https://user-images.githubusercontent.com/98372474/167178601-d1e7a872-c7f9-4681-8b37-e68ef0f0b977.png"><br><br>
+
 
 ------------------------------------------------------------------------------------------------------------------------------
 <h3>[3. Spring Boot Docker image 생성, Docker Hub에 올리기]</h3> <br>
