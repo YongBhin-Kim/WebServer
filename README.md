@@ -12,12 +12,15 @@
 3. Docker Image 생성 <br>
 - ver1.0 : 간단한 스프링 부트 이미지
 - - Docker Image : `docker pull coji68/web-server:1.0`
-- ver1.1 : 스프링 부트 도커 이미지를 이용한 통신(현재 git에 올라온 code)
+- ver1.1 : 스프링 부트 도커 이미지를 이용한 통신
 - - Docker Image(Server) : `docker pull coji68/web-server:1.1`
 - - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git` <br>
-- ver1.2 : JNI를 이용한 암/복호화 통신 스프링 부트 도커 이미지 (---- 진행중 ----)
-- - Docker Image(Server) : `docker pull coji68/web-server:1.2`
-- - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git` <br>
+- ver1.2 : JNI를 이용한 암/복호화 통신 스프링 부트 도커 이미지
+- - Docker Image(Server) : `docker pull coji68/web-server:1.2` (업데이트 완료)
+- - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git`
+- - Docker Image(Client) : x (로컬 실행)
+- ver1.2.1 : 
+- - Docker Image(Server) 최적화 진행중...
 <br><br><br>
 
 
@@ -38,6 +41,7 @@
  `docker run -p [브라우저포트번호][컨테이너포트번호] -t [레포지이름/이미지이름:태그]` <br><br>
  ver1.0 : `docker run -p 8080:8080 -t coji68/web-server:1.0` <br>
  ver1.1 : `docker run -p 10000:10000 -t coji68/web-server:1.1` <br>
+ ver1.2 : `docker run -p 10000:10000 -t coji68/web-server:1.2` <br>
  <br><br>
 
 - 명령어 실행 결과 Spring이 정상 작동<br>
@@ -47,23 +51,53 @@
 <img width="500" height="250" alt="image" src="https://user-images.githubusercontent.com/98372474/166337952-26e86920-adf7-4ed7-9ce5-8c0130c6d516.png"><br><br>
 
 
-<h3>[2. Server-Client 통신 (for ver1.1)] </h3><br>
+<h3>[2. Server-Client 통신] </h3><br>
 
-(windows환경 실험중)<br>
+- Server (ver 1.1)
+- Server (ver 1.2)
+- Server (ver 1.2.1) 준비중
+
 **[통신을 위한 Server]** <br>
 - 다운받은 도커 이미지를 브라우저/컨테이너 포트번호를 10000으로 열어준다.(스프링 내부 구현을 10000포트로 했습니다.)
 - 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.1` <br>
+- 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.2` <br>
 
 **[통신을 위한 Client]** <br>
-- git clone을 마쳤으면 BlockCipher 라이브러리를 컴파일하고 Client.java 파일을 컴파일한다.
-- 1)라이브러리 컴파일
-`$ gcc -I”/[JDK 경로]/Contents/Home/include" -I”/[JDK 경로]/Contents/Home/include/darwin" -o libBlockCipher.jnilib -shared Client.c` <br>
 
-- 2)라이브러리 참조 가져오기
-`$ java -Djava.library.path=. Client` <br>
+clone한 클라이언트를 사용하려면 몇몇 설정과 명령을 수정해야 하며 windows와 macOS의 사용 방법이 다르다.<br>
+[1. (Windows만 해당) jni_md.h 파일을 다음과 같이 수정한다.] <br>
 
-- 3)직접 컴파일
-- 터미널에 명령어 입력 `$ java [Client 폴더의 경로]/Client.java`<br>
+![image](https://user-images.githubusercontent.com/98372474/174834119-74b35e3c-ad67-4c37-b539-10e1d55296b9.png)<br>
+<br>
+
+[2. java 클래스파일 생성] <br>
+- 윈도우는 기본 MS949 인코딩을 사용하므로 작업 파일의 인코딩 UTF-8로 수정하여 javac 명령을 사용한다.
+
+macOS : javac Client.java <br>
+Windows : javac Client.java -encoding UTF-8 <br>
+<br>
+
+[3. 헤더 재생성] <br>
+macOS : `javac Client.java -h .` <br>
+Windows : `javac Client.java -h . -encoding UTF-8` <br>
+<br>
+
+[4. 라이브러리 컴파일] <br>
+macOS : `gcc -I”/[JDK 경로]/Contents/Home/include" -I”/[JDK 경로]/Contents/Home/include/darwin" -o libBlockCipher.jnilib -shared Client.c` <br>
+Windows : 내pc 우클릭 -> 속성 -> 관련설정 -> 고급 시스템 설정 -> 환경 변수 -> 시스템 변수 -> CLASSPATH의 변수값을 `%JAVA_HOME%\lib;.` 으로 설정 <br>
+Windows : `gcc -I"[jdk경로]/include" -I"[jdk경로]/include/win32" -o libBlockCipher.jnilib -shared Client.c` <br>
+<br>
+
+[5. 라이브러리 경로 가져오기] <br>
+macOS : `java -Djava.library.path=. Client` <br>
+Windows : `java -Djava.library.path=[라이브러리(libBlockCipher.jnilib) 절대경로] Client` <br>
+<br>
+
+[6. (공통)클라이언트 컴파일] <br>
+Client.java 파일이 존재하는 폴더 내에서 명령어 입력 <br>
+`java Client.java` <br>
+<br>
+-----------------------------------------<br>
 <br>
 
 **다음과 같이 Server-Client가 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
@@ -71,9 +105,9 @@
 - Server - 포트번호 10000으로 서버를 열고 클라이언트의 접속을 기다린다.
 - Client - 포트번호 10000으로 접속을 요청한다.
 - Server-Client 연결 완료
-- Client - Input : 'aaaaa' 작성 
-- Server - Client로부터 전달받은 'aaaaa'를 Client에게 재전송
-- Client - From Server : 'aaaaa' 서버로부터 재전송받은 메시지를 standard output(모니터)으로 출력
+- Client - Input : 'message' 작성 
+- Server - Client로부터 전달받은 'message'를 Client에게 재전송
+- Client - From Server : 'message' 서버로부터 재전송받은 메시지를 standard output(모니터)으로 출력
 
 **다음과 같이 Server-Client가 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
 <img width="1429" alt="image" src="https://user-images.githubusercontent.com/98372474/167178601-d1e7a872-c7f9-4681-8b37-e68ef0f0b977.png"><br><br>
@@ -99,7 +133,7 @@
 - (Client) - Server로부터 받은(C로 복호화한) 평문을 확인한다.
 
 - Client 암/복호화 구현 및 서버와의 통신 구현 기능 구현
-- 대/소문자 둘 다 인식 가능, ASCII에 속한 모든 문자 구현
+- ASCII에 속한 모든 문자 구현
 - Server 암/복호화 구현 (진행중 - 서버에서는 의존성을 수정해야 한다.) ###
 
 **다음과 같이 Server-Client가 JNI를 이용하여 암/복호화된 통신이 가능하다.** <br>
@@ -162,6 +196,7 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 
 <img width="898" alt="image" src="https://user-images.githubusercontent.com/98372474/167174523-79ac92e5-4fb5-46d9-a4f8-9e79db14b5be.png">
 
-- 도커 레포지토리에 올라갔다.
+- 도커 레포지토리에 올라갔는지 확인한다.
+- https://hub.docker.com/
 <img width="1270" alt="image" src="https://user-images.githubusercontent.com/98372474/167174484-82a427f9-e9d2-49a5-8301-3600616d8e46.png">
 
