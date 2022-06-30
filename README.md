@@ -12,14 +12,15 @@
 3. Docker Image 생성 <br>
 - ver1.0 : 간단한 스프링 부트 이미지
 - - Docker Image : `docker pull coji68/web-server:1.0`
-- ver1.1 : 스프링 부트 도커 이미지를 이용한 통신(현재 git에 올라온 code)
+- ver1.1 : 스프링 부트 도커 이미지를 이용한 통신
 - - Docker Image(Server) : `docker pull coji68/web-server:1.1`
 - - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git` <br>
 - ver1.2 : JNI를 이용한 암/복호화 통신 스프링 부트 도커 이미지
 - - Docker Image(Server) : `docker pull coji68/web-server:1.2` (업데이트 완료)
 - - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git`
-- - Docker Image(Client) : `docker pull coji68/web-client:1.2` (로컬 실행)
-- - (Server 최적화 진행중...)
+- - Docker Image(Client) : x (로컬 실행)
+- ver1.2.1 : 
+- - Docker Image(Server) 최적화 진행중...
 <br><br><br>
 
 
@@ -54,6 +55,7 @@
 
 - Server (ver 1.1)
 - Server (ver 1.2)
+- Server (ver 1.2.1) 준비중
 
 **[통신을 위한 Server]** <br>
 - 다운받은 도커 이미지를 브라우저/컨테이너 포트번호를 10000으로 열어준다.(스프링 내부 구현을 10000포트로 했습니다.)
