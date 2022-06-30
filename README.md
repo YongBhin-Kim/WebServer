@@ -20,9 +20,9 @@
 - - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git`
 - - Docker Image(Client) : x (로컬 실행)
 - ver1.2.1 : 
-- - Docker Image(Server) 최적화 테스트 단계
+- - Docker Image(Server) 최적화 테스트 단계 (오류 수정 완료)
 - ver1.2.2 : 
-- - Docker Image(Server) : `docker pull coji68/web-server:1.2.2` (22-07-01 업데이트 완료)
+- - Docker Image(Server) : `docker pull coji68/web-server:1.2.2` (22-07-01 업데이트, 오류 수정중)
 <br><br><br>
 
 
@@ -112,6 +112,12 @@ Client.java 파일이 존재하는 폴더 내에서 명령어 입력 <br>
 - Client - From Server : 'message' 서버로부터 재전송받은 메시지를 standard output(모니터)으로 출력
 
 **다음과 같이 Server-Client가 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
+- ver 1.1
+<img width="1429" alt="image" src="https://user-images.githubusercontent.com/98372474/167178601-d1e7a872-c7f9-4681-8b37-e68ef0f0b977.png"><br><br>
+
+- ver 1.2.2
+<img width="1436" alt="image" src="https://user-images.githubusercontent.com/98372474/176786776-1e5df1e4-6aac-4f9c-addc-639da4226cb0.png"><br><br>
+
 <img width="1429" alt="image" src="https://user-images.githubusercontent.com/98372474/167178601-d1e7a872-c7f9-4681-8b37-e68ef0f0b977.png"><br><br>
 
 <br><br><br>
