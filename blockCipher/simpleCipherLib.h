@@ -6,7 +6,7 @@ void Dec(int CT[128], int key[10]);
 void printState(int state[128]);
 
 // 암호화
-void Enc(int PT[128], int key[10]) {
+void Enc(int PT[128], int key[10]) { // 97 ^ 
     int num = 0;
     while(num < 128) {
         for(int i=0; i<10; i++) {
