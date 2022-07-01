@@ -22,7 +22,7 @@
 - ver1.2.1 : 
 - - Docker Image(Server) 최적화 테스트 단계 (오류 수정 완료)
 - ver1.2.2 : 
-- - Docker Image(Server) : `docker pull coji68/web-server:1.2.2` (22-07-01 업데이트, 오류 수정중)
+- - Docker Image(Server) : `docker pull coji68/web-server:1.2.2` (22-07-01 업데이트, error - docker images only)
 <br><br><br>
 
 
