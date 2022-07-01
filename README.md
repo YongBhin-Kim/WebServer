@@ -40,7 +40,7 @@
 
 3. 다운로드한 image를 컨테이너 생성과 동시에 실행 <br>
 - Docker Image 실행 명령어 <br>
- `docker run -p [브라우저포트번호][컨테이너포트번호] -t [레포지이름/이미지이름:태그]` <br><br>
+ `docker run -p [browser port number]:[container port number] -t [docker repository name/image name:tag]` <br><br>
  ver1.0 : `docker run -p 8080:8080 -t coji68/web-server:1.0` <br>
  ver1.1 : `docker run -p 10000:10000 -t coji68/web-server:1.1` <br>
  ver1.2 : `docker run -p 10000:10000 -t coji68/web-server:1.2` <br>
