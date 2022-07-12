@@ -47,7 +47,8 @@
  ver1.0 : `docker run -p 8080:8080 -t coji68/web-server:1.0` <br>
  ver1.1 : `docker run -p 10000:10000 -t coji68/web-server:1.1` <br>
  ver1.2 : `docker run -p 10000:10000 -t coji68/web-server:1.2` <br>
- ver1.2.x : `docker run -p 10000:10000 -t coji68/web-server:1.2.x` <br>
+ ver1.2.1: `docker run -p 10000:10000 -t coji68/web-server:1.2.1` <br>
+ ver1.2.2: `git clone https://github.com/YongBhin-Kim/WebServer.git` [로컬 실행] <br>
  <br><br>
 
 - 명령어 실행 결과 Spring이 정상 작동<br>
