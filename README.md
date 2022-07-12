@@ -1,5 +1,8 @@
 <h2>(국민대학교 학부연구생) SpringBoot Client-to-Server 암/복호화 통신 - Java Native Interface </h2>
 
+***현재 올라와 있는 버전은 1.2.2(서버/클라이언트 암/복호) 입니다.*** <br>
+***1.2.1 버전의 서버는 Docker Image에 올라가있습니다.*** <br>
+
 **[Docker image Environment]**
 - Docker image
 - Language : Java, C
@@ -44,7 +47,7 @@
  ver1.0 : `docker run -p 8080:8080 -t coji68/web-server:1.0` <br>
  ver1.1 : `docker run -p 10000:10000 -t coji68/web-server:1.1` <br>
  ver1.2 : `docker run -p 10000:10000 -t coji68/web-server:1.2` <br>
- ver1.2.x : `docker run -p 8080:8080 -t coji68/web-server:1.2.x` <br>
+ ver1.2.x : `docker run -p 10000:10000 -t coji68/web-server:1.2.x` <br>
  <br><br>
 
 - 명령어 실행 결과 Spring이 정상 작동<br>
