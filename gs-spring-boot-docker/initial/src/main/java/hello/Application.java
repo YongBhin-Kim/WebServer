@@ -7,13 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.io.*; 
 import java.net.*;
+// import Server.java;
+// import Server.*;
 
 @SpringBootApplication
-@RestController
+// @RestController
 public class Application {
+	// static {
+		// System.loadLibrary("BlockCipher");
+	// }
+
 	public static void main(String[] args) throws Exception{
 		SpringApplication.run(Application.class, args);
-
+		System.out.println("Hello World!\n");
 		String clientSentence, serverSentence; 
 		ServerSocket welcomeSocket = new ServerSocket(10000);
 
@@ -24,13 +30,17 @@ public class Application {
 			DataOutputStream  outToClient = 
 			new DataOutputStream(connectionSocket.getOutputStream()); 
 			clientSentence = inFromClient.readLine();
-			serverSentence = clientSentence;
-				//===============================================
-				// 받은 clientSentence를 복호화
-				// 보낼 serverSentence를 암호화
-				//===============================================
-			System.out.println("clientSentence = " + clientSentence);
+			//===============================================   
+			String receivedSentence = Server.JNIFunct(clientSentence);
+			serverSentence = Server.JNIFunct_Enc(receivedSentence);
+			//===============================================
+			//===============================================
+			// 받은 clientSentence를 복호화 (clientSentence를 blockCipherLib.c 로 넘겨서 복호화한 후 print)
+			// 보낼 serverSentence를 암호화 (serverSentence를 blockCipherLib.c 로 넘겨서 암호화한 후 Client로 보낸다.)
+			//===============================================
 			outToClient.writeBytes(serverSentence + '\n'); 
 		}
 	}
+
+
 }
