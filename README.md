@@ -65,7 +65,10 @@
 - 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.1` <br>
 - 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.2` <br>
 - ver 1.2.2는 외부에서 라이브러리 인식이 필요하기 때문에 이미지로 구축하지 않고 git clone을 통해 진행합니다.
-- - 따라서 다운받은 서버를 아래 [통신을 위한 Client]의 방법과 유사하게 진행하면 됩니다. <br>
+- - 따라서 다운받은 서버를 아래 [통신을 위한 Client]의 방법과 유사하게 진행하면 됩니다.
+- - 만일 서버 컴파일 에러가 뜬다면 initial 폴더 내부의 gradlew 파일이 존재하는 위치에서 다음 명령어를 사용하여 서버를 실행합니다.
+- - `./gradlew build && java -jar build/libs/initial-0.0.1-SNAPSHOT.jar`
+
 
 **[통신을 위한 Client]** <br>
 
