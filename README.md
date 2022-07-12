@@ -20,7 +20,9 @@
 - - Client : `git clone https://github.com/YongBhin-Kim/WebServer.git`
 - - Docker Image(Client) : x (로컬 실행)
 - ver1.2.1 : 
-- - Docker Image(Server) 최적화 진행중...
+- - Docker Image(Server) 최적화 테스트 단계 (오류 수정 완료)
+- ver1.2.2 : 
+- - Docker Image(Server) : `docker pull coji68/web-server:1.2.2` (22-07-01 업데이트, 도커 이미지 파일 인식 오류)
 <br><br><br>
 
 
@@ -38,10 +40,11 @@
 
 3. 다운로드한 image를 컨테이너 생성과 동시에 실행 <br>
 - Docker Image 실행 명령어 <br>
- `docker run -p [브라우저포트번호][컨테이너포트번호] -t [레포지이름/이미지이름:태그]` <br><br>
+ `docker run -p [browser port number]:[container port number] -t [docker repository name/image name:tag]` <br><br>
  ver1.0 : `docker run -p 8080:8080 -t coji68/web-server:1.0` <br>
  ver1.1 : `docker run -p 10000:10000 -t coji68/web-server:1.1` <br>
  ver1.2 : `docker run -p 10000:10000 -t coji68/web-server:1.2` <br>
+ ver1.2.x : `docker run -p 8080:8080 -t coji68/web-server:1.2.x` <br>
  <br><br>
 
 - 명령어 실행 결과 Spring이 정상 작동<br>
@@ -55,7 +58,7 @@
 
 - Server (ver 1.1)
 - Server (ver 1.2)
-- Server (ver 1.2.1) 준비중
+- Server (ver 1.2.2)
 
 **[통신을 위한 Server]** <br>
 - 다운받은 도커 이미지를 브라우저/컨테이너 포트번호를 10000으로 열어준다.(스프링 내부 구현을 10000포트로 했습니다.)
@@ -110,6 +113,7 @@ Client.java 파일이 존재하는 폴더 내에서 명령어 입력 <br>
 - Client - From Server : 'message' 서버로부터 재전송받은 메시지를 standard output(모니터)으로 출력
 
 **다음과 같이 Server-Client가 통신이 가능하다.(위쪽 : Server / 아래쪽 : Client)** <br>
+- ver 1.1
 <img width="1429" alt="image" src="https://user-images.githubusercontent.com/98372474/167178601-d1e7a872-c7f9-4681-8b37-e68ef0f0b977.png"><br><br>
 
 <br><br><br>
@@ -144,6 +148,13 @@ Client.java 파일이 존재하는 폴더 내에서 명령어 입력 <br>
 **[Client]**
 
 <img width="841" alt="image" src="https://user-images.githubusercontent.com/98372474/174623887-fb366591-93a6-4883-af1a-8fa23dbd034b.png"> <br>
+<br>
+
+- ver 1.2.2
+<img width="1436" alt="image" src="https://user-images.githubusercontent.com/98372474/176786776-1e5df1e4-6aac-4f9c-addc-639da4226cb0.png"><br><br>
+
+<img width="1429" alt="image" src="https://user-images.githubusercontent.com/98372474/167178601-d1e7a872-c7f9-4681-8b37-e68ef0f0b977.png"><br><br>
+
 
 ------------------------------------------------------------------------------------------------------------------------------
 <h3>[3. Spring Boot Docker image 생성, Docker Hub에 올리기]</h3> <br>
