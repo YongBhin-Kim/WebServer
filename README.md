@@ -22,7 +22,7 @@
 - ver1.2.1 : 
 - - Docker Image(Server) 최적화 테스트 단계 (오류 수정 완료)
 - ver1.2.2 : 
-- - Docker Image(Server) : `docker pull coji68/web-server:1.2.2` (22-07-01 업데이트, 도커 이미지 파일 인식 오류)
+- - Server/Client : `git clone https://github.com/YongBhin-Kim/WebServer.git` (22-07-12 업데이트, 도커 이미지 x)
 <br><br><br>
 
 
@@ -64,6 +64,8 @@
 - 다운받은 도커 이미지를 브라우저/컨테이너 포트번호를 10000으로 열어준다.(스프링 내부 구현을 10000포트로 했습니다.)
 - 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.1` <br>
 - 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.2` <br>
+- ver 1.2.2는 외부에서 라이브러리 인식이 필요하기 때문에 이미지로 구축하지 않고 git clone을 통해 진행합니다.
+- - 따라서 다운받은 서버를 아래 [통신을 위한 Client]의 방법과 유사하게 진행하면 됩니다. <br>
 
 **[통신을 위한 Client]** <br>
 
@@ -118,7 +120,7 @@ Client.java 파일이 존재하는 폴더 내에서 명령어 입력 <br>
 
 <br><br><br>
   
-<h3>[2. JNI를 이용한 암/복호화가 추가된 Server-Client 통신 (for ver1.2)] </h3><br>
+<h3>[2. JNI를 이용한 암/복호화가 추가된 Server-Client 통신 (for ver1.2.x)] </h3><br>
 
 **[JNI를 이용하여 ver1.1 위에 C language 블록암호 암호화/복호화 과정을 추가한다.]** <br>
 
