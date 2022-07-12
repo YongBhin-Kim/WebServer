@@ -65,24 +65,32 @@
 - 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.1` <br>
 - 터미널에 명령어 입력 `docker run -p 10000:10000 coji68/web-server:1.2` <br>
 - ver 1.2.2는 외부에서 라이브러리 인식이 필요하기 때문에 이미지로 구축하지 않고 git clone을 통해 진행합니다.
-- - 따라서 다운받은 서버를 아래 [통신을 위한 Client]의 방법과 유사하게 진행하면 됩니다.
-- - 만일 서버 컴파일 에러가 뜬다면 initial 폴더 내부의 gradlew 파일이 존재하는 위치에서 다음 명령어를 사용하여 서버를 실행합니다.
-- - `./gradlew build && java -jar build/libs/initial-0.0.1-SNAPSHOT.jar`
-
+- - 따라서 다운받은 서버를 아래 [통신을 위한 Client]의 방법과 유사하게 진행하면 됩니다. <br>
 
 **[통신을 위한 Client]** <br>
 
 clone한 클라이언트를 사용하려면 몇몇 설정과 명령을 수정해야 하며 windows와 macOS의 사용 방법이 다르다.<br>
-[1. (Windows만 해당) jni_md.h 파일을 다음과 같이 수정한다.] <br>
+
+
+[1.1. (Windows만 해당) WebServer폴더 내부 Client 폴더 내부의 Client.java 파일에서 57번째 줄을 자신의 경로에 알맞게 라이브러리를 불러오도록 코드를 수정한다. 아래 사진은 예시이다.] <br>
+
+`System.load(“~WebServer/Client/libBlockCipher.jnilib”)`<br>
+
+<img width="736" alt="image" src="https://user-images.githubusercontent.com/98372474/178488925-4c5cf6bb-621a-47b7-979d-2bfaacb4e4e7.png"> <br>
+<br>
+
+[1.2. (Windows만 해당) jni_md.h 파일을 다음과 같이 수정한다.] <br>
 
 ![image](https://user-images.githubusercontent.com/98372474/174834119-74b35e3c-ad67-4c37-b539-10e1d55296b9.png)<br>
 <br>
 
 [2. java 클래스파일 생성] <br>
-- 윈도우는 기본 MS949 인코딩을 사용하므로 작업 파일의 인코딩 UTF-8로 수정하여 javac 명령을 사용한다.
+- 윈도우는(cmd인 경우) 기본 MS949 인코딩을 사용하므로 작업 파일의 인코딩 UTF-8로 수정하여 javac 명령을 사용한다.
+- minGW 사용시에는 모든 명령에서 `-encoding UTF-8`을 제외하고 진행해도 된다.
 
-macOS : javac Client.java <br>
-Windows : javac Client.java -encoding UTF-8 <br>
+
+macOS : `javac Client.java` <br>
+Windows : `javac Client.java -encoding UTF-8` <br>
 <br>
 
 [3. 헤더 재생성] <br>
