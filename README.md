@@ -1,7 +1,7 @@
 <h2>(국민대학교 학부연구생) SpringBoot Client-to-Server 암/복호화 통신 - Java Native Interface </h2>
 
 ***현재 올라와 있는 버전은 1.2.2(서버/클라이언트 암/복호) 입니다.*** <br>
-***1.2.1 버전의 서버는 Docker Image에 올라가있습니다.*** <br>
+***1.2.1 버전의 서버는 Docker hub에 올라가있습니다.*** <br>
 
 **[Docker image Environment]**
 - Docker image
