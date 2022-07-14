@@ -26,6 +26,7 @@
 - - Docker Image(Server) 최적화 테스트 단계 (오류 수정 완료)
 - ver1.2.2 : 
 - - Server/Client : `git clone https://github.com/YongBhin-Kim/WebServer.git` (22-07-12 업데이트, 도커 이미지 x)
+- ver1.2.3 : 블록암호 AES 추가 <br>
 <br><br><br>
 
 
